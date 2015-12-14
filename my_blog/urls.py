@@ -4,6 +4,7 @@ from django.contrib import admin
 
 #千万不能写成from my_blog.article import views as articleviews,这样会找不到article app
 from article import views as articleviews
+from article.templatetags import custom_markdown 
 admin.autodiscover()
 
 urlpatterns = patterns('',
