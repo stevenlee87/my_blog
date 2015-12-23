@@ -100,6 +100,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#TEMPLATE_DIRS = (
+#    os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
+#)
+
+#Django 1.7/1.8 has modified adding form of template.
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
+    TEMPLATE_PATH,
 )
