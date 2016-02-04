@@ -7,14 +7,27 @@ from django.http import Http404
 
 from article.models import Article
 from django.contrib.syndication.views import Feed
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 # def home(request):
 #     return HttpResponse("Hello World, Django")
 
 
+# def home(request):
+#     post_list = Article.objects.all()  # 获取全部的Article对象
+#     return render(request, 'home.html', {'post_list': post_list})
+
 def home(request):
-    post_list = Article.objects.all()  # 获取全部的Article对象
+    posts = Article.objects.all()  # 获取全部的Article对象
+    paginator = Paginator(posts, 2)  # 每页显示两个
+    page = request.GET.get('page')
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage:
+        post_list = paginator.paginator(paginator.num_pages)
     return render(request, 'home.html', {'post_list': post_list})
 
 # def detail(request, my_args):

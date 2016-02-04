@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.conf import global_settings
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -41,7 +42,6 @@ INSTALLED_APPS = (
     'article',
 )
 
-from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
 )
@@ -67,26 +67,27 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-                'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-                'NAME': 'my_blog',                      # Or path to database file if using sqlite3.
-                'USER': 'root',                      # Not used with sqlite3.
-                'PASSWORD': 'root',                  # Not used with sqlite3.
-                'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-                'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
+
+        'ENGINE': 'django.db.backends.mysql',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'my_blog',                     # Or path to database file if using sqlite3.
+        'USER': 'root',                        # Not used with sqlite3.
+        'PASSWORD': 'root',                    # Not used with sqlite3.
+        'HOST': '127.0.0.1',                   # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '3306',                        # Set to empty string for default. Not used with sqlite3.
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-#LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'zh-cn'
 
-#TIME_ZONE = 'UTC'
-TIME_ZONE='Asia/Shanghai'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -102,14 +103,14 @@ PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(os.path.dirname(PROJECT_PATH), 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    ("css",os.path.join(STATIC_ROOT,'css')),
+    ("css", os.path.join(STATIC_ROOT, 'css')),
 )
 
-#TEMPLATE_DIRS = (
-#    os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
-#)
+# TEMPLATE_DIRS = (
+#     os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
+# )
 
-#Django 1.7/1.8 has modified adding form of template.
+# Django 1.7/1.8 has modified adding form of template.
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = (
     TEMPLATE_PATH,
