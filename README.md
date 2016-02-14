@@ -31,4 +31,4 @@ python manage.py runserver
 
 ##Screenshots
 
-![首页样式]http://imepisode.sinaapp.com/?attachment_id=100
+![首页样式](http://imepisode-wordpress.stor.sinaapp.com/uploads/2016/02/blog_home.jpg)
