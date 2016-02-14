@@ -12,10 +12,8 @@
 git clone https://github.com/stevenlee87/my_blog.git
 
 ##Usage
-cd my_blog_tutorial
+cd my_blog
 
 pip install -r requirements.txt  #安装所有依赖
-
-python manage.py migrate
 
 python manage.py runserver
