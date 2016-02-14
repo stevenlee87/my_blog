@@ -7,9 +7,13 @@
 * Python 2.7.9
 * Django 1.7.0
 * Pure
+* mysql
 
 ##Install
-git clone https://github.com/stevenlee87/my_blog.git
+1. initial mysql
+CREATE DATABASE my_blog CHARACTER SET utf8 COLLATE utf8_bin; flush privileges;
+
+2. git clone https://github.com/stevenlee87/my_blog.git
 
 ##Usage
 cd my_blog
