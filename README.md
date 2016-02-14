@@ -14,13 +14,14 @@
 CREATE DATABASE my_blog CHARACTER SET utf8 COLLATE utf8_bin; flush privileges;
 
 2. install package
+
 * pip install bootstrap_admin
 * pip install markdown
 * pip install markdown2
 * pip install django-markdown
 * pip install dj-database-url==0.3.0
 
-2. git clone https://github.com/stevenlee87/my_blog.git
+3. git clone https://github.com/stevenlee87/my_blog.git
 
 ##Usage
 cd my_blog
