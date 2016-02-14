@@ -20,7 +20,6 @@ CREATE DATABASE my_blog CHARACTER SET utf8 COLLATE utf8_bin; flush privileges;
 * pip install markdown2
 * pip install django-markdown
 * pip install dj-database-url==0.3.0
-
 3. git clone https://github.com/stevenlee87/my_blog.git
 
 ##Usage
